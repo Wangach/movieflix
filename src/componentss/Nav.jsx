@@ -2,7 +2,7 @@ import React from 'react'
 
 const Nav = () => {
   return (
-    <nav className='bg-black text-white flex justify-between content-center p-3 fixed w-screen '>
+    <nav className='bg-primary text-primary flex justify-between content-center p-3 w-full h-14'>
       <div className="logo bold uppercase cursor-pointer">
         MovieFlex
       </div>
@@ -11,13 +11,10 @@ const Nav = () => {
       </div>
       <ul className=''>
           <li className='inline-block pr-4'>
-            <a href="/">Home</a>
+            <a href="/about">Log In</a>
           </li>
           <li className='inline-block pr-4'>
-            <a href="/about">About</a>
-          </li>
-          <li className='inline-block pr-4'>
-            <a href="/contact">Contact</a>
+            <a href="/contact">Sign Up</a>
           </li>
       </ul>
     </nav>

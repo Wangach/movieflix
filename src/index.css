@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*fonts import*/
+@font-face {
+    font-family: Merriweather;
+    src: url('./assets/fonts/Merriweather-Black.ttf');
+}
+@font-face {
+    font-family: Josefin;
+    src: url('./assets/fonts/JosefinSans-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: OpenSans;
+    src: url('./assets/fonts/OpenSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: Roboto;
+    src: url('./assets/fonts/RobotoSlab-VariableFont_wght.ttf');
+}
+
+* {
+    font-family: Josefin;
+}
