@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from './componentss/Nav'
 import Sidebar from './componentss/Sidebar'
 import Footer from './componentss/Footer'
+import MovieList from './componentss/MovieList'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
      </div>
      <div className='basis-[85%]'>
       <Nav />
+      <MovieList />
       <Footer />
      </div>
     </div>
