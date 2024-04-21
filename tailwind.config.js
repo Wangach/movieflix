@@ -20,12 +20,19 @@ export default {
         'secondary': '#2B46F5',
         'main': '#F2FBE0',
         'light': 'rgba(120, 141, 191, 0.25)',
-        'onh': 'rgba(57, 83, 145, 1.0)'
+        'onh': 'rgba(57, 83, 145, 1.0)',
+        'overlay': 'rgba(14, 9, 33, 0.85)'
       },
       textColor: {
         'primary': '#F2FBE0',
        'secondary': '#0A74A8',
        'main': '#0E0921',
+       'star': 'rgba(222, 230, 0, 1.0)',
+      },
+      fontFamily: {
+        'roboto': 'Roboto',
+        'opensans': 'OpenSans',
+        'merri': 'Merriweather'
       }
     },
   },

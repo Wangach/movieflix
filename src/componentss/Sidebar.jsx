@@ -4,7 +4,7 @@ import logo from '../assets/logo/logo.png'
 const Sidebar = () => {
   let genreClass = 'p-2 m-1 bg-light rounded-[10px] text-center text-sm hover:bg-onh transition ease-in-out duration-800 cursor-pointer';
   return (
-    <ul className='bg-primary text-primary h-screen'>
+    <ul className='bg-primary text-primary h-full'>
       <li className="logo">
         <img src={logo} alt="logo" className='h-24 w-24 mx-auto' />
       </li>

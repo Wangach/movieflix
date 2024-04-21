@@ -7,7 +7,7 @@ import MovieList from './componentss/MovieList'
 const App = () => {
   return (
     <div className='flex flex-wrap'>
-     <div className='basis-[15%]'>
+     <div className='basis-[15%] '>
       <Sidebar />
      </div>
      <div className='basis-[85%]'>
