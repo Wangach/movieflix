@@ -11,7 +11,7 @@ const Movie = () => {
     <div className='relative m-3 border rounded-lg text-red-500 p-1'>
         <img src={poster} alt="Movie Poster" className='w-60 h-80 hover:cursor-pointer' />
         <div className='absolute z-10 -translate-y-[100%] text-primary bg-overlay w-full h-full 
-         transition ease-in-out delay-1000' id='ovl' onMouseEnter={handleHover}>
+         transition ease-in-out delay-1000' id='ovl'>
             <div className='fixed bottom-2 p-2'>
               <div className='ml-2'>
                 <h2 className='mt-6 font-bold font-merri'>Dune Part Two</h2>
@@ -29,7 +29,7 @@ const Movie = () => {
                 </span>
               </div>
             </div>
-            <div className='fixed top-2 right-1'>
+            <div className='fixed top-2 right-1'  onMouseEnter={handleHover}>
               <span className='rounded-3xl text-star inline p-2 ml-1 text-sm'>
                   <FontAwesomeIcon icon={faStar} />
               </span>
