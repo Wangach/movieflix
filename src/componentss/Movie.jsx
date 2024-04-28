@@ -10,7 +10,7 @@ const Movie = () => {
   return (
     <div className='relative m-3 border rounded-lg text-red-500 p-1'>
         <img src={poster} alt="Movie Poster" className='w-60 h-80 hover:cursor-pointer' />
-        <div className='absolute z-10 -translate-y-[100%] text-primary bg-overlay w-full h-full 
+        <div className='absolute hidden z-10 -translate-y-[100%] text-primary bg-overlay w-full h-full 
          transition ease-in-out delay-1000' id='ovl'>
             <div className='fixed bottom-2 p-2'>
               <div className='ml-2'>
