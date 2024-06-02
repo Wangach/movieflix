@@ -6,8 +6,9 @@ import poster from '../assets/img/test.jpg'
 
 const MovieList = () => {
   const baseURL = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc';
-  const tn = '';
+  const tn = `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMzYyY2Y2MzI5OTE3ZmUwMGMwNzNmYWI3MjY2NGUzYyIsInN1YiI6IjYxOGQyZTY3N2FjODI5MDA4YWJkODIwMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ryHG9K0ku6YXzB5j9eFU1_uMS07fx9zr0L4NIA3dQNg`;
   const [items, setItems] = useState('')
+  const [imagePath, setImagePath] = useState('')
   const [dataLoaded, setDataLoaded] = useState(false)
   const options = {
     method: 'GET',
@@ -21,15 +22,44 @@ const MovieList = () => {
 
 useEffect(() => {
   axios.request(options)
- .then((response) => {
-   console.log(response.data.results)
-   setItems(response.data.results)
-   setDataLoaded(true)
- 
- })
- .catch((error) => {
-    console.log(error)
-  })
+    .then((response) => {
+      console.log(response.data.results)
+      console.log(typeof(response.data.results))
+      // response.data.results.forEach((result) => {
+      //   retImagePath(result.id)
+      // })
+      
+      setItems(response.data.results)
+      setDataLoaded(true)
+
+    
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+    // let retImagePath = (id) => {
+    //   let imgid = id
+    //   let imageUrl = `https://api.themoviedb.org/3/movie/${imgid}/images`
+    //   let imageOptions = {
+    //     method: 'GET',
+    //   headers: {
+    //     accept: 'application/json',
+    //     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMzYyY2Y2MzI5OTE3ZmUwMGMwNzNmYWI3MjY2NGUzYyIsInN1YiI6IjYxOGQyZTY3N2FjODI5MDA4YWJkODIwMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ryHG9K0ku6YXzB5j9eFU1_uMS07fx9zr0L4NIA3dQNg'
+    //   }
+    //   }
+    //   fetch(imageUrl, imageOptions)
+    //   .then(response => response.json())
+    //   .then((response) => {
+    //     // console.log(response)
+    //     Object.entries(response.posters[2]).forEach(([key, value]) => {
+    //       if(key === 'file_path'){
+    //         // console.log(`https://image.tmdb.org/t/p/w500${value}`)
+    //         setImagePath(`https://image.tmdb.org/t/p/w500${value}`)
+    //       }
+    //     })
+    //   })
+    //   .catch(err => console.error(err));
+    // }
 }, [])
 
   
@@ -39,8 +69,20 @@ useEffect(() => {
       items.map((item) => {
         return(
           <>
-           <div className='relative m-3 border rounded-lg text-red-500 p-1' key={item.id}>
-            <img src={'https://api.themoviedb.org/3/discover/movie/'+item.poster_path} alt="Movie Poster" className='w-60 h-80 hover:cursor-pointer' />
+           <div className='relative m-3 border rounded-lg text-red-500 p-1' key='1'>
+              {
+                Object.entries(item).forEach(([key, value]) => {
+                  // console.log(`For this ${key} I choose ${value}`)
+                  if(key === 'adult'){
+                    return(
+                      <img src={`https://image.tmdb.org/t/p/w500${value}`} alt="Movie Poster" className='w-60 h-80 hover:cursor-pointer' />
+                    )
+                  }else{
+                    throw new Error(`Backdrop path not found!`)
+                  }
+                })
+              }
+            {/* <img src={imagePath} alt="Movie Poster" className='w-60 h-80 hover:cursor-pointer' /> */}
             <div className='absolute z-20 -translate-y-[100%] text-primary bg-overlay w-10 h-10 
              transition ease-in-out delay-3000' id='ovl1'>
               <div className='fixed top-2 right-1'>
