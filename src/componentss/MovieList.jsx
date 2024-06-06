@@ -38,11 +38,10 @@ useEffect(() => {
   return (
     <>
       {dataLoaded ? (
-      items.slice(0, 8).map((item) => {
+      items.slice(0, 6).map((item) => {
         return(
-           <div className='relative m-3 border rounded-lg text-red-500 p-1' key={item.id}>
-            <div className="text-center uppercase">Popular Movies</div>
-            <img src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} alt="Movie Poster" className='w-60 h-80 hover:cursor-pointer' /> 
+           <div className='relative m-3 rounded-xl' key={item.id}>
+            <img src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`} alt="Movie Poster" className='bg-center bg-cover w-60 h-[400px] hover:cursor-pointer' /> 
             <div className='absolute z-20 -translate-y-[100%] text-primary w-10 h-10 
              transition ease-in-out delay-3000' id='ovl1'>
               <div className='fixed top-2 right-1'>
@@ -52,7 +51,7 @@ useEffect(() => {
                   <span className='bg-main rounded-3xl text-main inline p-2 text-sm'>{Math.round(item.vote_average)}</span>
                 </div>
              </div>
-            <div className='absolute z-10 -translate-y-[100%] text-primary bg-overlay w-full h-full 
+            <div className='absolute z-10 -translate-y-[100%] text-primary w-full h-full 
              transition ease-in-out delay-2000' id='ovl'>
                 <div className='fixed bottom-2 p-2'>
                   <div className='mr-2 float-right block'>
