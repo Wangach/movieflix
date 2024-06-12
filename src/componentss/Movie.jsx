@@ -5,7 +5,7 @@ import SeriesList from './SeriesList'
 const Movie = () => {
   return (
     <div className="flex flex-wrap">
-      {/* <MovieList id='1'/> */}
+      <MovieList id='1'/>
       <SeriesList />
     </div>
   )

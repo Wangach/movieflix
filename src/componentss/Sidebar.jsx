@@ -1,8 +1,10 @@
 import React from 'react'
 import logo from '../assets/logo/logo.png'
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   let genreClass = 'p-2 m-1 bg-light rounded-[10px] text-center text-sm hover:bg-onh transition ease-in-out duration-800 cursor-pointer';
+  
   return (
     <ul className='bg-primary text-primary h-full'>
       <li className="logo">
@@ -11,13 +13,16 @@ const Sidebar = () => {
       <li className=''>
         <ul className='p-4 text-justify'>
           <li className='p-2'>
-            <a href="#">Latest</a>
+            <Link to='/'>Editor Picks</Link>
           </li>
           <li className='p-2'>
-            <a href="#">Trending</a>
+            <Link to='/latest'>Latest</Link>
           </li>
           <li className='p-2'>
-            <a href="#">Editor Picks</a>
+          <Link to='/popular'>Trending</Link>
+          </li>
+          <li className='p-2'>
+          <Link to='/search'>Search</Link>
           </li>
         </ul>
       </li>

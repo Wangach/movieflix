@@ -38,39 +38,38 @@ useEffect(() => {
   return (
     <>
       {dataLoaded ? (
-      items.slice(0, 6).map((item) => {
+      items.slice(0, 8).map((item) => {
         return(
-           <div className='relative m-3 rounded-xl' key={item.id}>
-            <img src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`} alt="Movie Poster" className='bg-center bg-cover w-60 h-[400px] hover:cursor-pointer' /> 
-            <div className='absolute z-20 -translate-y-[100%] text-primary w-10 h-10 
-             transition ease-in-out delay-3000' id='ovl1'>
-              <div className='fixed top-2 right-1'>
+          <div key={item.id} className="card relative m-3 p-1" style={
+            {
+              height: '400px',
+              width: '250px'
+            }
+           }>
+              <div className='hover:cursor-pointer' style={
+                {
+                  backgroundImage: `url('https://image.tmdb.org/t/p/original${item.poster_path}')`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                  height: '100%',
+                  width: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '10px',
+                  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.25)',
+                }
+              }>
+                <div className="absolute bottom-3 left-2 p-1 bg-overlay rounded">
+                  <h1 className='text-zinc-100 text-sm font-bold font-roboto break-normal break-words'>{item.title}</h1>
+                  <blockquote className='text-white'>{item.release_date}</blockquote>
+                </div>
+                <div className='absolute top-2 right-1'>
                   <span className='rounded-3xl text-star inline p-2 ml-1 text-sm'>
                       <FontAwesomeIcon icon={faStar} />
                   </span>
-                  <span className='bg-main rounded-3xl text-main inline p-2 text-sm'>{Math.round(item.vote_average)}</span>
+                  <span className='bg-main rounded-full text-main inline p-2 text-sm'>{Math.round(item.vote_average)}</span>
                 </div>
-             </div>
-            <div className='absolute z-10 -translate-y-[100%] text-primary w-full h-full 
-             transition ease-in-out delay-2000' id='ovl'>
-                <div className='fixed bottom-2 p-2'>
-                  <div className='mr-2 float-right block'>
-                    <h2 className='mt-6 font-bold font-merri'>{item.title}</h2>
-                    <blockquote>{item.release_date}</blockquote>
-                  </div>
-                  <div className=''>
-                    {
-                      item.genre_ids.forEach((genre_id) =>{
-                        return(
-                          <span className='bg-main rounded-3xl text-main inline p-2 ml-1 text-sm'>
-                            {genre_id}
-                          </span>
-                        )
-                      })
-                    }
-                  </div>
-                </div>
-            </div>
+          </div>
         </div>
         )
         

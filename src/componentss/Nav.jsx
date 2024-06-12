@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
   return (
@@ -6,15 +7,12 @@ const Nav = () => {
       <div className="logo bold uppercase cursor-pointer">
         MovieFlex
       </div>
-      <div className="search">
-        <input type="text" placeholder="Search" className='rounded-md p-1'/>
-      </div>
       <ul className=''>
           <li className='inline-block pr-4'>
-            <a href="/about">Log In</a>
+            <Link to='/'>Login</Link>
           </li>
           <li className='inline-block pr-4'>
-            <a href="/contact">Sign Up</a>
+            <Link to='/'>Sign Up</Link>
           </li>
       </ul>
     </nav>
